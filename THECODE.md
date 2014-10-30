@@ -273,7 +273,7 @@
             },
             newBlacklisted: [],
             newBlacklistedSongFunction: null,
-            Raffle: {
+            raffle: {
                 raffleStatus: false,
                 participants: [],
                 countdown: null,
@@ -284,8 +284,8 @@
                     }, 60 * 1000);
                     API.sendChat(basicBot.chat.isopen);
                 },
-                endRaffle: function () {
-                    basicBot.room.Raffle.raffleStatus = false;
+                endraffle: function () {
+                    basicBot.room.raffle.raffleStatus = false;
                     var ind = Math.floor(Math.random() * basicBot.room.raffle.participants.length);
                     var winner = basicBot.room.raffle.participants[ind];
                     basicBot.room.raffle.participants = [];
@@ -2367,7 +2367,7 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         if (!basicBot.room.raffle.raffleStatus) {
-                            basicBot.room.roulette.startraffle();
+                            basicBot.raffle.startraffle();
                         }
                     }
                 }
